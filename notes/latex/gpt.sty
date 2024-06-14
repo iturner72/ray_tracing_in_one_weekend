@@ -1,0 +1,27 @@
+% Create a new package for formatting chat
+\ProvidesPackage{gpt}
+
+\RequirePackage{enumitem}
+\RequirePackage{xcolor}
+\RequirePackage{ifthen}
+
+% Define colors for ChatGPT and User
+\definecolor{chatgptcolor}{RGB}{45, 212, 191} % Blue
+\definecolor{usercolor}{RGB}{59, 130, 246} % Green
+
+% Define a new list environment for the conversation
+\newenvironment{gpt}{
+  \begin{enumerate}[label={}]
+}{
+  \end{enumerate}
+}
+
+% Define a command to format the user's dialogue
+\newcommand{\user}[1]{
+  \item \textbf{\textcolor{usercolor}{User:}} #1
+}
+
+% Define a command to format ChatGPT's response
+\newcommand{\chatgpt}[1]{
+  \item \textbf{\textcolor{chatgptcolor}{ChatGPT:}} #1
+}
