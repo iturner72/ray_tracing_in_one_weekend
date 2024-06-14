@@ -5,8 +5,8 @@ build/
 /v3/*.ppm
 
 ## Don't track jpg or png files 
-*.jpg
-*.png
+#*.jpg
+#*.png
 
 ## Presentation files
 *.pptx

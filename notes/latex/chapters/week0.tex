@@ -38,5 +38,28 @@
         (Figure~\ref{fig:rt_weekend_main_build_success})
     \item make \texttt{rtrace} aliase for build, compile, run, then open image
         in feh, probably terrible idea but whatever 
-    \item ...
+    \item got color header file with a \texttt{write_color} util function
+    \item now working on a \texttt{ray} class which will use our \texttt{vec3} 
+        class.
+    \item refresher on rays: think of them as functions 
+        (Equation~\ref{eq:rays}):
+        \begin{equation}
+            \mathbf{P}(t) = \mathbf{A} + t\mathbf{b}
+            \label{eq:rays}
+        \end{equation}
+    \item here $\mathbf{P}$ is a 3D position along a line in 3D. $\mathbf{A}$ is
+        the ray origin and $\mathbf{b}$ is the ray direction. The ray parameter
+        $t$ is a real number (\texttt{double} in the code). Plug in a different
+        $t$ and $\mathbf{P}(t)$ moves the point along the ray. Add in negative t
+        values and you can go anywhere on the 3D line. For positive $t$, you get
+        only the parts in front of $\mathbf{A}$, and this is what is often
+        called a half-line or a ray. (Figure~\ref{fig:linear_interpolation}) 
+        \begin{figure}[ht]
+            \centering
+            \includegraphics[width=12cm]{linear_interpolation}
+            \captionsetup{labelfont=bf, textfont=it}
+            \caption{linear interpolation}
+            \label{fig:linear_interpolation}
+        \end{figure}
+    \item  ...
 \end{itemize}
