@@ -56,10 +56,49 @@
         called a half-line or a ray. (Figure~\ref{fig:linear_interpolation}) 
         \begin{figure}[ht]
             \centering
-            \includegraphics[width=12cm]{linear_interpolation}
+            \includegraphics[width=7cm]{linear_interpolation}
             \captionsetup{labelfont=bf, textfont=it}
             \caption{linear interpolation}
             \label{fig:linear_interpolation}
         \end{figure}
-    \item  ...
+    \item to make the actual ray tracer we will make simple camera with 16:9
+        aspect ratio since it will be easier to debug $x$ and $y$ 
+        transpositions.
+    \item we need the height to be at least 1 since we divide width by height
+        since it's easier to set the aspect ratio to width then divide by
+        height. e.g. $width/height = 16/9 = 1.7778$
+    \item apparently this is just an \textit{optimistic} (my words) ratio since 
+        these values are not integers. we approximate the aspect ratio as best 
+        we can by rounding height to the nearest integer (and don't allow it 
+        to be less than one)
+    \clearpage
+    \item now we have a camera center in 3d space from which all the rays will
+        originate (commonly referred to as the \textit{eye point}). we initially
+        set the distance between the viewport of the camera center point to be
+        one unit. This is often referred to as the \textit{focal length}.
+    \item we will use \textit{right-handed coordinates} (right hand rule gang)
+        Figure~\ref{fig:camera_rh_rule}
+    \begin{figure}[ht]
+        \centering
+        \includegraphics[width=9cm]{camera_rh_rule}
+        \captionsetup{labelfont=bf, textfont=it}
+        \caption{camera geometry}
+        \label{fig:camera_rh_rule}
+    \end{figure}
+    \item unfortunately, the camera pose conflicts with the way we would like to
+        render our image starting from the upper left pixel row by row scanning
+        across from left to right. (Figure~\ref{fig:image_coord_system})
+        \begin{figure}[ht]
+            \centering
+            \includegraphics[width=9cm]{image_coord_system}
+            \captionsetup{labelfont=bf, textfont=it}
+            \caption{viewport and pixel grid}
+            \label{fig:image_coord_system}
+        \end{figure}
+    \item we have example 7x5 resolution image, the viewport upper left corner
+        $\mathbf{Q}$, the pixel $\mathbf{P_{0,0}}$ location, the viewport vector
+        $\mathbf{V_{u}}$ (viewport_u), the viewport vector $\mathbf{V_{v}}$
+        (viewport_v), and the pixel delta vectors $\mathbf{\Delta u}$ and 
+        $\mathbf{\Delta v}$.
+    \item ...
 \end{itemize}
