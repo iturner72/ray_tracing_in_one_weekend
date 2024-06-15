@@ -12,8 +12,8 @@
   morekeywords=[4]{},
 }
 
-% Set the default style for file tree listings
-\lstset{
+% Set the style for file tree listings
+\lstdefinestyle{FileTreeStyle}{
   basicstyle=\small\ttfamily,
   keywordstyle=[1]\color{teal}\bfseries,
   keywordstyle=[2]\color{blue},
@@ -36,15 +36,15 @@
 
 % Python style listings
 \lstdefinestyle{pythoncode}{
-    language=Python,
-    basicstyle=\ttfamily\small,
-    otherkeywords={self},
-    keywordstyle=\ttfamily\small,
-    emph={MyClass, __init__},
-    emphstyle=\ttfamily\small\color{blue},
-    stringstyle=\color{red},
-    frame=tb,
-    showstringspaces=fasle
+  language=Python,
+  basicstyle=\ttfamily\small,
+  otherkeywords={self},
+  keywordstyle=\ttfamily\small,
+  emph={MyClass, **init**},
+  emphstyle=\ttfamily\small\color{blue},
+  stringstyle=\color{red},
+  frame=tb,
+  showstringspaces=false,
 }
 
 \lstdefinestyle{mystyle}{
@@ -61,5 +61,51 @@
   tabsize=4,
   showspaces=false,
   showstringspaces=false,
-  breaklines=true
+  breaklines=true,
+}
+
+% Define the language and keywords for C++
+\lstdefinelanguage{CPP}{
+  sensitive=true,
+  morecomment=[l]{//},
+  morecomment=[s]{/*}{*/},
+  morestring=[b]",
+  morekeywords=[1]{auto, const, double, float, int, bool, true, false, vec3},
+  morekeywords=[2]{if, else, return, include, for, while, do, switch, case, break, continue, default},
+  morekeywords=[3]{oc, a, b, c, discriminant, center, radius, direction, sqrt, dot, point3, ray},
+  morekeywords=[4]{main, std, cout, cin, endl},
+}
+
+% Define the rosepine style
+\lstdefinestyle{rosepinestyle}{
+  language=CPP, % This explicitly links the style to the CPP language definition
+  backgroundcolor=\color{rose-pine-base},
+  basicstyle=\small\ttfamily\color{rose-pine-text},
+  keywordstyle=[1]\color{rose-pine-iris},
+  keywordstyle=[2]\color{rose-pine-foam},
+  keywordstyle=[3]\color{rose-pine-rose},
+  keywordstyle=[4]\color{rose-pine-love},
+  stringstyle=\color{rose-pine-rose},
+  commentstyle=\color{rose-pine-faded},
+  identifierstyle=\color{rose-pine-foam},
+  numberstyle=\footnotesize\color{rose-pine-subtle},
+  breakatwhitespace=true,
+  breaklines=true,
+  captionpos=b,
+  keepspaces=true,
+  numbers=left,
+  numbersep=10pt,
+  xleftmargin=15pt,
+  showspaces=false,
+  showstringspaces=false,
+  showtabs=false,
+  tabsize=2,
+  frame=single,
+  framerule=0.5pt,
+  framesep=5pt,
+  frameround=tttt,
+  aboveskip=10pt,
+  belowskip=10pt,
+  abovecaptionskip=5pt,
+  belowcaptionskip=5pt,
 }

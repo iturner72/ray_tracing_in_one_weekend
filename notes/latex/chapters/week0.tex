@@ -11,14 +11,14 @@
         \footnotetext{ thanks pmarca!
             \textcolor{blue}{\href{https://pmarchive.com/guide_to_personal_productivity.html}{original
         blog post}} (archived by someone) }
-    \item test bib \cite{Shirley2024RTW1}
-    \item bib working lets go
+%    \item test bib \cite{Shirley2024RTW1}
+    \item bib working lets go (broken on mac rn haha)
     \item now that bib is working, thanks to 
         \textcolor{blue}{\href{https://github.com/petershirley}{Peter Shirley}},
         \textcolor{blue}{\href{https://github.com/trevordblack}{Trevor David Black}}, and
         \textcolor{blue}{\href{https://github.com/hollasch}{Steve Hollasch}}
-        for this incredible writeup! \cite{Shirley2024RTW1} (
-        \textcolor{DarkGreen}{\href{https://raytracing.github.io/books/RayTracingInOneWeekend.html}{course
+        for this incredible writeup! (
+        \textcolor{blue}{\href{https://raytracing.github.io/books/RayTracingInOneWeekend.html}{course
         link}})
     \item shoutout to 
         \textcolor{blue}{\href{https://x.com/ludwigABAP}{@ludwigABAP}}
@@ -313,4 +313,22 @@
             \caption{sphere colored according to its normal vectors}
             \label{fig:sphere_normals_gradient}
         \end{figure}
+        \clearpage
+    \item testing cpp listing style
+        \begin{lstlisting}[style=rosepinestyle]
+        double hit_sphere(const point3& center, double radius, const ray& r) {
+          vec3 oc = center - r.origin();
+          auto a = dot(r.direction(), r.direction());
+          auto b = -2.0 * dot(r.direction(), oc);
+          auto c = dot(oc, oc) - radius*radius;
+          auto discriminant = b*b - 4*a*c;
+          
+          if (discriminant < 0) {
+            return -1.0;
+          } else {
+            return (-b - sqrt(discriminant)) / (2.0*a);
+          }
+        }
+        \end{lstlisting}
+    \item ...
 \end{itemize}

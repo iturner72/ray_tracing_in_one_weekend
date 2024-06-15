@@ -11,9 +11,6 @@
 \usepackage[english]{babel} % no idea
 \usepackage[]{amsthm} % no idea
 \usepackage[]{amssymb} % no idea
-\usepackage{xcolor} % for colors
-\definecolor{Maroon}{RGB}{178, 0, 0}
-\definecolor{DarkGreen}{RGB}{3, 168, 97}
 \usepackage{xurl} % fixes hbox error for long urls
 \usepackage{caption} % for bold and italic figure captions
 \usepackage{nomencl} % for nomenclature page
@@ -21,7 +18,21 @@
 \usepackage{tabularx} % for tables
 \usepackage{adjustbox} % for smaller tables
 \usepackage{listingsstyles} % Listings styles packages defined in ./listingsstyles.tex
-\usepackage{gpt} % Render GPT threads
+%\usepackage{gpt} % Render GPT threads
+\usepackage[dvipsnames]{xcolor}
+
+% Rose Pine Dawn color definitions
+\definecolor{rose-pine-text}{HTML}{575279}
+\definecolor{rose-pine-base}{HTML}{faf4ed}
+\definecolor{rose-pine-high}{HTML}{6e6a86}
+\definecolor{rose-pine-love}{HTML}{bb9c9d}
+\definecolor{rose-pine-iris}{HTML}{9cbfc9}
+\definecolor{rose-pine-foam}{HTML}{56949f}
+\definecolor{rose-pine-rose}{HTML}{d7827e}
+\definecolor{rose-pine-subtle}{HTML}{6e6a86}
+\definecolor{rose-pine-faded}{HTML}{cecaed}
+\definecolor{rose-pine-cursor}{HTML}{286983}
+
 \bibliographystyle{ieeetr} % for bibliography in the IEEE format
 
 \geometry{
@@ -35,7 +46,7 @@
 % Comment out sections that you don't want to compile
 \includeonly{
     chapters/week0,
-    chapters/references,
+%    chapters/references,
 }
 
 \title{\vspace{5cm}Ray Tracing One Weekend}
@@ -48,9 +59,9 @@
 
 \include{chapters/week0}
 
-\clearpage
-\addcontentsline{toc}{section}{References}
-\bibliography{chapters/references} 
-\label{sec:references}
+%\clearpage
+%\addcontentsline{toc}{section}{References}
+%\bibliography{chapters/references} 
+%\label{sec:references}
 
 \end{document}
