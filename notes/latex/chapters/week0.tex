@@ -1,14 +1,20 @@
 \clearpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Week 0: Ray Tracing Class}
+\section{Ray Tracing in One Weekend}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\subsection*{Thursday, 06/13/2023}
 \begin{itemize}
+    \item this is my take on Marc Andreessen's anti-todo\footnotemark\ list
+        concept that i have been doing for years no matter the nature of the 
+        project or type of work i am doing (i also maintain a bite-sized 
+        version tiny moleskin)
+        \footnotetext{ thanks pmarca!
+            \textcolor{blue}{\href{https://pmarchive.com/guide_to_personal_productivity.html}{original
+        blog post}} (archived by someone) }
     \item \textcolor{DarkGreen}{\href{https://raytracing.github.io/books/RayTracingInOneWeekend.html}{course link}}
-    \item shoutout to \textbf{\textcolor{Maroon}{TODO}} add x user that pointed
-        me to this (shoutout ml btw (for you page))
-        % todo add twitter user whomst this is from
+    \item shoutout to 
+        \textbf{\textcolor{blue}{\href{https://x.com/ludwigABAP}{@ludwigABAP}}}
+        for poasting this course (shoutout ml btw (for you page))
     \item this is my very first c or cpp project (op says it's c flavored cpp) 
         beyond hello worlds and basic basic robotics stuff
     \item i love rust but i am not cracked at all so i would probably not be
@@ -220,6 +226,9 @@
         \end{equation}
     \item this will yield either positive (2 real solutions), negative (no real
         solutions) or zero (1 real solution)
+
+        \clearpage
+
     \item the algebra almost always relates very directly to the geometry 
         (Figure~\ref{fig:ray_sphere_intersection_roots})
         \begin{figure}[ht]
@@ -231,5 +240,13 @@
         \end{figure}
     \item create first ray traced image by placing a small sphere at -1 on the
         z-axis and then coloring red any pixel that intersects it.
-    \item ...
+        (Figure~\ref{fig:red_ray_trace_sphere})
+        \begin{figure}[ht]
+            \centering
+            \includegraphics[width=12cm]{red_ray_trace_sphere}
+            \captionsetup{labelfont=bf, textfont=it}
+            \caption{simple red sphere}
+            \label{fig:red_ray_trace_sphere}
+        \end{figure}
+    \item ... 
 \end{itemize}
