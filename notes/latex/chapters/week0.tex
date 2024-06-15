@@ -172,4 +172,64 @@
             (\mathbf{C}-(\mathbf{Q}+t\mathbf{d})) = r^{2}
         \end{equation}
 
+    \item we have three vecs on the left dotted by three vecs on right, if we
+        solved for the full dot product we would get nine vectors (slop), we
+        need to solve for t with quadratic equation, so first shape equation
+        above into quadratic by first isolating $t$ terms, then distribute dot
+        product, then move $r^{2}$ to left hand side:
+
+    \item boom
+        \begin{equation}
+            (-t\mathbf{d}+(\mathbf{C}-\mathbf{Q})) \cdot
+            (-t\mathbf{d}+(\mathbf{C}-\mathbf{Q})) = r^{2}
+        \end{equation}
+
+    \item bop
+        \begin{equation}
+            t^{2}\mathbf{d}\cdot \mathbf{d} - 2t\mathbf{d} \cdot
+            (\mathbf{C}-\mathbf{Q}) + (\mathbf{C}-\mathbf{Q}) \cdot
+            (\mathbf{C}-(\mathbf{Q}+t\mathbf{d})) = r^{2}
+        \end{equation}
+
+    \item pow
+        \begin{equation}
+            t^{2}\mathbf{d}\cdot \mathbf{d} - 2t\mathbf{d} \cdot
+            (\mathbf{C}-\mathbf{Q}) + (\mathbf{C}-\mathbf{Q}) \cdot
+            (\mathbf{C}-(\mathbf{Q}+t\mathbf{d})) -r^{2} = 0
+        \end{equation}
+
+    \item we can now run quadratic formula on this bad boy and all the vecs are
+        reduced to scalars by dot prod.
+
+        \begin{equation}
+            \frac{-b\pm \sqrt{b^{2}-4ac}}{2a}
+        \end{equation}
+
+    \item can now for $t$ using the terms $a, b,$ and $c$:
+
+        \begin{equation}
+            a = \mathbf{d}\cdot \mathbf{d}
+        \end{equation}
+
+        \begin{equation}
+            b = -2\mathbf{d}\cdot (\mathbf{C}-\mathbf{C})
+        \end{equation}
+
+        \begin{equation}
+            c = (\mathbf{C}-\mathbf{Q}) \cdot (\mathbf{C}-\mathbf{Q}) - r^{2}
+        \end{equation}
+    \item this will yield either positive (2 real solutions), negative (no real
+        solutions) or zero (1 real solution)
+    \item the algebra almost always relates very directly to the geometry 
+        (Figure~\ref{fig:ray_sphere_intersection_roots})
+        \begin{figure}[ht]
+            \centering
+            \includegraphics[width=7cm]{ray_sphere_intersection_roots}
+            \captionsetup{labelfont=bf, textfont=it}
+            \caption{ray sphere intersection roots}
+            \label{fig:ray_sphere_intersection_roots}
+        \end{figure}
+    \item create first ray traced image by placing a small sphere at -1 on the
+        z-axis and then coloring red any pixel that intersects it.
+    \item ...
 \end{itemize}
