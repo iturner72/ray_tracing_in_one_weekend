@@ -64,7 +64,7 @@
   breaklines=true,
 }
 
-% Define the language and keywords for C++
+% C++
 \lstdefinelanguage{CPP}{
   sensitive=true,
   morecomment=[l]{//},
@@ -76,7 +76,7 @@
   morekeywords=[4]{main, std, cout, cin, endl},
 }
 
-% Define the rosepine style
+% rosepine style
 \lstdefinestyle{rosepinestyle}{
   language=CPP, % This explicitly links the style to the CPP language definition
   backgroundcolor=\color{rose-pine-base},
@@ -94,16 +94,17 @@
   captionpos=b,
   keepspaces=true,
   numbers=left,
-  numbersep=10pt,
+  numbersep=15pt,
   xleftmargin=15pt,
   showspaces=false,
   showstringspaces=false,
   showtabs=false,
-  tabsize=2,
+  tabsize=4,
   frame=single,
-  framerule=0.5pt,
-  framesep=5pt,
-  frameround=tttt,
+  framerule=2pt, % Set the frame rule thickness
+  rulecolor=\color{rose-pine-border}, % Set the frame color
+  framesep=10pt,
+  frameround=ffff, % Remove rounded corners
   aboveskip=10pt,
   belowskip=10pt,
   abovecaptionskip=5pt,

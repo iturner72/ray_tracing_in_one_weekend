@@ -314,21 +314,21 @@
             \label{fig:sphere_normals_gradient}
         \end{figure}
         \clearpage
-    \item testing cpp listing style
-        \begin{lstlisting}[style=rosepinestyle]
-        double hit_sphere(const point3& center, double radius, const ray& r) {
-          vec3 oc = center - r.origin();
-          auto a = dot(r.direction(), r.direction());
-          auto b = -2.0 * dot(r.direction(), oc);
-          auto c = dot(oc, oc) - radius*radius;
-          auto discriminant = b*b - 4*a*c;
-          
-          if (discriminant < 0) {
-            return -1.0;
-          } else {
-            return (-b - sqrt(discriminant)) / (2.0*a);
-          }
-        }
-        \end{lstlisting}
-    \item ...
+    \item testing cpp listing style:
+\begin{lstlisting}[style=rosepinestyle]
+double hit_sphere(const point3& center, double radius, const ray& r) {
+  vec3 oc = center - r.origin();
+  auto a = dot(r.direction(), r.direction());
+  auto b = -2.0 * dot(r.direction(), oc);
+  auto c = dot(oc, oc) - radius*radius;
+  auto discriminant = b*b - 4*a*c;
+  
+  if (discriminant < 0) {
+    return -1.0;
+  } else {
+    return (-b - sqrt(discriminant)) / (2.0*a);
+  }
+}
+\end{lstlisting}
+    \item ....
 \end{itemize}
