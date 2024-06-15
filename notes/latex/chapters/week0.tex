@@ -293,6 +293,8 @@
             \caption{sphere surface-normal geometry}
             \label{fig:sphere_normal_direction}
         \end{figure}
+        
+        \clearpage
     \item we don't have light let so let's use a common trick for visualizing
         normals: a color map. we can assume $\mathbf{n}$ is a unit length vec,
         so each component is between -1 and 1; we just map eacho component to
@@ -302,6 +304,13 @@
         Figure~\ref{fig:red_ray_trace_sphere}). we only have 1 sphere in the
         schene and it's right in front of the camera, so we won't worry about
         negative values of $t$ yet. We'll just assume the closest hit point
-        (smallest $t$) is the one that we want. These changes in the code let us
-        compute and visualize $\mathbf{n}$.
+        (smallest $t$) is the one that we want.
+        (Figure~\ref{fig:sphere_normals_gradient})
+        \begin{figure}[ht]
+            \centering
+            \includegraphics[width=15cm]{sphere_normals_gradient}
+            \captionsetup{labelfont=bf, textfont=it}
+            \caption{sphere colored according to its normal vectors}
+            \label{fig:sphere_normals_gradient}
+        \end{figure}
 \end{itemize}
