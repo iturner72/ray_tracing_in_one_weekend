@@ -100,5 +100,17 @@
         $\mathbf{V_{u}}$ (viewport_u), the viewport vector $\mathbf{V_{v}}$
         (viewport_v), and the pixel delta vectors $\mathbf{\Delta u}$ and 
         $\mathbf{\Delta v}$.
+    \item now we add a simple gradient to the \texttt{ray_color} function which
+        will linearly blend white and blue depending on the height of $y$
+        coordinate $after$ scaling the ray direction to unit length. op uses
+        standard graphics trick to linearly scale $0.0 \leq a \leq 1.0$. when
+        $a=1.0$, i want blue, when $a=0.0$, i want white. in between, i want a
+        blend. here's a \textit{linear interpolation} or \textit{linear
+        interpolation}; commonly reffered to as a \textit{lerp} between two
+        values. a lerp is always of the form 
+        \begin{equation}
+            blendedValue = (1-a)\cdot startValue + a \cdot endValue
+        \end{equation}
+        with $a$ going from zero to one (ayy lmao).
     \item ...
 \end{itemize}
