@@ -207,14 +207,14 @@
         \begin{equation}
             t^{2}\mathbf{d}\cdot \mathbf{d} - 2t\mathbf{d} \cdot
             (\mathbf{C}-\mathbf{Q}) + (\mathbf{C}-\mathbf{Q}) \cdot
-            (\mathbf{C}-(\mathbf{Q}+t\mathbf{d})) = r^{2}
+            (\mathbf{C}-\mathbf{Q}) = r^{2}
         \end{equation}
 
     \item pow
         \begin{equation}
             t^{2}\mathbf{d}\cdot \mathbf{d} - 2t\mathbf{d} \cdot
             (\mathbf{C}-\mathbf{Q}) + (\mathbf{C}-\mathbf{Q}) \cdot
-            (\mathbf{C}-(\mathbf{Q}+t\mathbf{d})) -r^{2} = 0
+            (\mathbf{C}-\mathbf{Q}) - r^{2} = 0
         \end{equation}
 
     \item we can now run quadratic formula on this bad boy and all the vecs are
@@ -261,4 +261,8 @@
             \caption{simple red sphere}
             \label{fig:red_ray_trace_sphere}
         \end{figure}
+    \item this lacks all sorts like shading, reflection rays, and more than a
+        single object, also this solution doesn't account for the camera really
+        since it will also work with the sphere center at +1 (behind camera)
+    \item 
 \end{itemize}
