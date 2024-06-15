@@ -264,5 +264,44 @@
     \item this lacks all sorts like shading, reflection rays, and more than a
         single object, also this solution doesn't account for the camera really
         since it will also work with the sphere center at +1 (behind camera)
-    \item 
+        \clearpage
+    \item i should start writing section titles... maybe later %todo
+    \item shading with surface normals, a normal is just perpendicular to the
+        surface at the point of intersection.
+    \item we have key design decision to make for normal vectors in code:
+        whether normal vecs will have arbitrary length, or should we normalize?
+        \textit{much to think about...}
+    \item it is tempting to skip the expensive sqrt op involved in normalizing
+        the vector, in case it's not needed. in practice, however, there are
+        three important observations. first, if a unit-length normal vector is
+        \textit{ever} required, then you might as well do it up from once,
+        instead of over and over again ``just in case" for every location where
+        unit-length is required. Second, we \textit{do} require unit-length
+        normal vecors in several places. Third, if you require normal vectors to
+        be unit length, then you can often efficiently generate that vec with an
+        understanding of the specific geometry class, in its consructor, or in
+        the \texttt{hit()} function. e.g., sphere normals can be made unit
+        length simply by dividing by the sphere radius, avoiding the sqrt
+        entirely.
+    \item unit length sphere normals will be used up front for these reasons
+    \item the outward normal for a sphere is in the direction of the hit point
+        minus the center (Figure~\ref{fig:sphere_normal_direction})
+        \begin{figure}[ht]
+            \centering
+            \includegraphics[width=12cm]{sphere_normal_direction}
+            \captionsetup{labelfont=bf, textfont=it}
+            \caption{sphere surface-normal geometry}
+            \label{fig:sphere_normal_direction}
+        \end{figure}
+    \item we don't have light let so let's use a common trick for visualizing
+        normals: a color map. we can assume $\mathbf{n}$ is a unit length vec,
+        so each component is between -1 and 1; we just map eacho component to
+        the interval fro m0 to 1, and then map $(x,y,z)$ to $(red,green,blue)$.
+        for the normal, we need the hit point, not just whether we hit or not
+        (which is all we are doing currently:
+        Figure~\ref{fig:red_ray_trace_sphere}). we only have 1 sphere in the
+        schene and it's right in front of the camera, so we won't worry about
+        negative values of $t$ yet. We'll just assume the closest hit point
+        (smallest $t$) is the one that we want. These changes in the code let us
+        compute and visualize $\mathbf{n}$.
 \end{itemize}
