@@ -43,10 +43,12 @@
         class.
     \item refresher on rays: think of them as functions 
         (Equation~\ref{eq:rays}):
+
         \begin{equation}
             \mathbf{P}(t) = \mathbf{A} + t\mathbf{b}
             \label{eq:rays}
         \end{equation}
+
     \item here $\mathbf{P}$ is a 3D position along a line in 3D. $\mathbf{A}$ is
         the ray origin and $\mathbf{b}$ is the ray direction. The ray parameter
         $t$ is a real number (\texttt{double} in the code). Plug in a different
@@ -108,9 +110,66 @@
         blend. here's a \textit{linear interpolation} or \textit{linear
         interpolation}; commonly reffered to as a \textit{lerp} between two
         values. a lerp is always of the form 
+
         \begin{equation}
             blendedValue = (1-a)\cdot startValue + a \cdot endValue
         \end{equation}
+
         with $a$ going from zero to one (ayy lmao).
-    \item ...
+    \item now it's time to add a sphere (folks use spheres in ray tracers
+        because calculating whether a ray hits a sphere is relatively simple.
+    \item the equation for a radius $r$ that is centered at the origin is an
+        important mathematical equation
+
+        \begin{equation}
+            x^{2}+y^{2}+z^{2}
+        \end{equation}
+
+    \item this of this as saying that if a given point $(x,y,z)$ is on the
+        surface of the sphere, then $x^{2}+y^{2}+z^{2}=r^{2}$. if a given point
+        $(x,y,z)$ is \textit{inside} the sphere, then $x^{2}+y^{2}+z^{2}<r^{2}$,
+        and if a given point $(x,y,z)$ is \textit{outside} the sphere, then
+        $x^{2}+y^{2}+z^{2}>r^{2}$.
+    \item if we want to allow the sphere center to be at an arbitrary point 
+        $(C_{x},C_{y},C_{z})$, then the equation is not so nice:
+
+        \begin{equation}
+            (C_{x} - x)^{2}+(C_{y} - y)^{2}+(C_{z} - z)^{2} = r^{2}
+        \end{equation}
+
+    \item in graphics, you almost always want formulas to be in terms of
+        vectors so we don't need to write out so many terms.
+    \item note that the vector from point $\mathbf{P}=(x,y,z)$ to center
+        $\mathbf{C}=(C_{x},C_{y},C_{z})$ is $(\mathbf{C}-\mathbf{P})$
+    \item we can ust the definition of the dot product:
+
+        \begin{equation}
+            (\mathbf{C}-\mathbf{P}) \cdot (\mathbf{C}-\mathbf{P}) = (C_{x} - x)^{2}+(C_{y} - y)^{2}+(C_{z} - z)^{2} = r^{2}
+        \end{equation}
+
+    \item then we can rewrite the equation of the sphere in vector form as:
+
+        \begin{equation}
+            (\mathbf{C}-\mathbf{P}) \cdot (\mathbf{C}-\mathbf{P}) = r^{2}
+        \end{equation}
+
+    \item we can read this as ``any point $\mathbf{P}$ that satisfies this
+        equation is on the sphere". we want to know if our ray 
+        $\mathbf{P}(t)=\mathbf{Q}+t\mathbf{d}$ ever hits the sphere anywhere. if
+        it does hit the sphere, there is some $t$ for which $\mathbf{P}(t)$
+        satisfies the sphere equation. So we are looking for any $t$ where this
+        is true:
+
+        \begin{equation}
+            (\mathbf{C}-\mathbf{P}(t)) \cdot (\mathbf{C}-\mathbf{P}(t)) = r^{2}
+        \end{equation}
+
+    \item which can be found by replacing $\mathbf{P}(t)$ with its expanded
+        form:
+
+        \begin{equation}
+            (\mathbf{C}-(\mathbf{Q}+t\mathbf{d})) \cdot
+            (\mathbf{C}-(\mathbf{Q}+t\mathbf{d})) = r^{2}
+        \end{equation}
+
 \end{itemize}
