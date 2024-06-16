@@ -3,7 +3,7 @@ cmake_minimum_required ( VERSION 3.1.0...3.27.0 )
 project ( RT LANGUAGES CXX )
 
 # Set to C++11
-set ( CMAKE_CXX_STANDARD          11 )
+set ( CMAKE_CXX_STANDARD          17 )
 set ( CMAKE_CXX_STANDARD_REQUIRED ON )
 set ( CMAKE_CXX_EXTENSIONS        OFF )
 
@@ -15,16 +15,16 @@ set ( CMAKE_CXX_EXTENSIONS        OFF )
 
 set ( SOURCE_RAY_TRACING
     src/RayTracing/main.cc
-  #  src/RayTracing/camera.h
-  #  src/RayTracing/color.h
-  #  src/RayTracing/hittable.h
-  #  src/RayTracing/hittable_list.h
+    #  src/RayTracing/camera.h
+    src/RayTracing/color.h
+    src/RayTracing/hittable.h
+    src/RayTracing/hittable_list.h
   #  src/RayTracing/interval.h
   #  src/RayTracing/material.h
-  #  src/RayTracing/ray.h
-  #  src/RayTracing/rtweekend.h
-  #  src/RayTracing/sphere.h
-  #  src/RayTracing/vec3.h
+    src/RayTracing/ray.h
+    src/RayTracing/rtweekend.h
+    src/RayTracing/sphere.h
+    src/RayTracing/vec3.h
 )
 
 include_directories(src)

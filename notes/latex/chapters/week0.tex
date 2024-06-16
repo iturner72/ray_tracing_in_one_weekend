@@ -415,5 +415,17 @@ double hit_sphere(const point3& center, double radius, const ray& r) {
         work and put the determination at geometry time. this is simply a matter
         of preference.
     \item %todo listing for list of hittable objects
-    \item ...
+    \item the \texttt{hittable_list} class code uses two C++ features that may
+        trip you up if you're not normally a C++ programmer: \texttt{vector} and
+        \texttt{shared_ptr}.
+    \item \texttt{shared_ptr<type>} is a pointer to some allocated type, with
+        reference-counting semantics. every time you assign its value to another
+        shared pointer (usually with a simple assignment), the reference count
+        is incremented. as shared pointers go out of the scope (like at the end
+        of a block or function), the reference count is decremented. once the
+        count goes to zero, the object is safely deleted.
+    \item typically, a shared pointer is first initialized with a
+        newly-allocated object, something like this:
+    \item %todo notes too lazy for now 
+    \item make common header file \texttt{rtweekend.h}
 \end{itemize}
