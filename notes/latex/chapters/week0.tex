@@ -330,5 +330,42 @@ double hit_sphere(const point3& center, double radius, const ray& r) {
   }
 }
 \end{lstlisting}
-    \item ....
+    \item first, recall that a vector dotted with itself is equal to the equared
+        length of that vector. 
+    \item second, notice how the eq for \texttt{b} has a factor of negative two
+        in it. consider what happens to the quadratic equation if $b = -2h:$
+        \begin{align*}
+            &\begin{array}{c}
+                \displaystyle \frac{-b\pm \sqrt{b^{2}-4ac}}{2a} \\[15pt]
+                \displaystyle = \frac{-(-2h) \pm \sqrt{(-2h)^{2}-4ac}}{2a} \\[15pt]
+                \displaystyle = \frac{2h \pm 2\sqrt{h^{2}-ac}}{2a} \\[15pt]
+                \displaystyle = \frac{h \pm \sqrt{h^{2}-ac}}{a} 
+            \end{array}
+        \end{align*}
+    \item this simplifies nicely so solving for $h$:
+        \begin{align*}
+            &\begin{array}{c}
+                \displaystyle b = -2\mathbf{d}\cdot (\mathbf{C}-\mathbf{Q}) \\[15pt] 
+                \displaystyle b = -2h \\[15pt] 
+                \displaystyle h = \frac{b}{-2} = \mathbf{d}\cdot (\mathbf{C}-\mathbf{Q})
+            \end{array}
+        \end{align*}
+    \item using these observations, we can now simplify the sphere-intersection
+        code to this: 
+\begin{lstlisting}[style=rosepinestyle]
+double hit_sphere(const point3& center, double radius, const ray& r) {
+    vec3 oc = center - r.origin();
+    auto a = r.direction().length_squared(); 
+    auto h = dot(r.direction(), oc);
+    auto c = oc.length_squared() - radius*radius;
+    auto discriminant = h*h - a*c;
+
+    if (discriminant < 0) {
+        return -1.0;
+    } else {
+        return (-h - sqrt(discriminant) ) / a;
+    }
+}
+\end{lstlisting}
+    \item ...
 \end{itemize}
