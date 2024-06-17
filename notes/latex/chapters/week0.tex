@@ -440,4 +440,11 @@ double hit_sphere(const point3& center, double radius, const ray& r) {
         \end{figure}
     \item now let's add an interval class to manage real-values intervals with a
         min and max for convenience
+    \item now let's move the camera code into its own class. it has 2 jobs:
+        \begin{enumerate}
+            \item construct and dispatch rays into the world
+            \item use the results of these rays to construct the rendered image
+        \end{enumerate}
+    \item clangd is being so annoying i need to fix my lsp, it is highlighting
+        things that are fine
 \end{itemize}
