@@ -15,12 +15,11 @@ set ( CMAKE_CXX_EXTENSIONS        OFF )
 
 set ( SOURCE_RAY_TRACING
     src/RayTracing/main.cc
-    #  src/RayTracing/camera.h
+    src/RayTracing/camera.h
     src/RayTracing/color.h
     src/RayTracing/hittable.h
     src/RayTracing/hittable_list.h
-  #  src/RayTracing/interval.h
-  #  src/RayTracing/material.h
+    src/RayTracing/interval.h
     src/RayTracing/ray.h
     src/RayTracing/rtweekend.h
     src/RayTracing/sphere.h
