@@ -427,4 +427,17 @@ double hit_sphere(const point3& center, double radius, const ray& r) {
         newly-allocated object, something like this:
     \item %todo notes too lazy for now 
     \item make common header file \texttt{rtweekend.h}
+
+        \clearpage
+
+    \item now we have a world! (Figure~\ref{fig:world_init})
+        \begin{figure}[ht]
+            \centering
+            \includegraphics[width=14cm]{world_init}
+            \captionsetup{labelfont=bf, textfont=it}
+            \caption{render or normals-colored sphere with ground}
+            \label{fig:world_init}
+        \end{figure}
+    \item now let's add an interval class to manage real-values intervals with a
+        min and max for convenience
 \end{itemize}
